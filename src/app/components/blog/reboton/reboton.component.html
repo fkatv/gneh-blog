@@ -1,87 +1,99 @@
-<div class="py-8  flex justify-center bg-slate-100">
-    <div class="w-[44%]">
-        <h1 class="pb-2">{{titulo}} </h1>
-        <div class="text-gray-500 text-[12px]">
-            <h3>Autor: Fabián Catalán</h3>
-            <h4 class="text-[13px]">23 de Diciembre de 2023</h4>
-        </div>
-
-        <section #introduccion class="pt-8">
-            <div class="rounded-xl border-2 border-primary-200 m-2 p-4">
-                <p><mark>Objetivo</mark>: Entender y crear un componente estilizado con Tailwind y el sistema de diseño Tailwind Elements en Angular.</p>
-            </div>
-            <p> Al definir los estilos de los elementos de una página,
-                es frecuente ver extensas líneas horizontales con clases de Tailwind, que a menudo, se expanden según
-                las necesidades de diseño
-                que se desee obtener en un elemento de página. Cuando este elemento estilizado se usa en varias partes
-                del proyecto, genera
-                demasiados bytes de código repetido. Veremos cómo optimizar y limpiar el código fuente de las
-                repetitivas configuraciones visuales
-                con el uso de componentes contextuales.
-            </p>
-
-        </section>
-
-        <div class="py-8 flex flex-col gap-2">
-            <h2 class="pb-8">Dile hola a los: <mark
-                    class="px-2 rounded-br-2xl bg-primary-700 text-primary-50">ReButtons!</mark> </h2>
-            <div class="flex flex-row gap-2">
-                <ux-button
-                    [options]="{texto:'Primary', uppercase: true, click: null, contexto: null, color:'primary',svg:null}"></ux-button>
-                <ux-button
-                    [options]="{texto:'secondary', uppercase: true, click: null, contexto: null, color:'secondary',svg:null}"></ux-button>
-                <ux-button
-                    [options]="{texto:'tertiary', uppercase: true, click: null, contexto: null, color:'tertiary',svg:null}"></ux-button>
-            </div>
-            <div class="flex flex-row gap-2">
-                <ux-button
-                    [options]="{texto:'primary', uppercase: true, click: null, contexto: null, color:'primary outlined',svg:null}"></ux-button>
-                <ux-button
-                    [options]="{texto:'secondary', uppercase: true, click: null, contexto: null, color:'secondary outlined',svg:null}"></ux-button>
-                <ux-button
-                    [options]="{texto:'tertiary', uppercase: true, click: null, contexto: null, color:'terciary outlined',svg:null}"></ux-button>
-            </div>
-        </div>
-
-        <section #ejemplo class="pb-8">
-            <img src="../../../../assets/blogs/reboton/reboton1.png" alt="">
-            <p class="text-gray-600 text-[16px]">Este fragmento de código estiliza los botones que están arriba.
-                Imagínate que sin esta estrategia hubiera repetido <mark>seis veces</mark> el código</p>
-
-        </section>
-
-        <section #interlude>
-            <h2>Qué, porqué, para qué y cómo hacer un <mark
-                    class="px-2 rounded-br-2xl bg-primary-700 text-primary-50">ReButtons!</mark></h2>
-
-            <h3 class="py-4">Qué es?</h3>
-            <p>Un componente contextual estilizado de un botón en Angular. Lo llamo contextual porque recibe el contexto
-                del padre como parámetro para que al traspasar las funciones (que podrían manejar variables de la clase
-                padre)
-                no se pierda el contexto <b>this</b> original y evitar así usar los <b>ng-templates.</b> Lo veremos con
-                detalle más adelante. </p>
-
-            <h3 class="py-4">Porqué hacer este componente?</h3>
-            <p> Sabiendo que hay varias herramientas de diseño gratuitas y de pago que traen plantillas listas para
-                usar, la idea es
-                aprender a usar componentes reutilizables en Angular, entender la estrategia contextual, aprender a usar
-                el <b>ng-class</b> y simplificar la complejidad de usar templates (al menos, para botones simples)
-            </p>
-            <h3 class="py-4">Para qué hacer este componente?</h3>
-            <p>Para mejorar tus habilidades de frontend, para crear nuevas plantillas o sistemas de diseño en Angular,
-                mejorar la lectura (readability), reutilización de código y
-                para crear tus propios diseños controlados por tu propio componente, qué mejor!</p>
-        </section>
-
-        <section #howto class="py-8">
-            <h2>Cómo hacer el componente contextual?</h2>
-            <ul>
-                <li>1. Crear el proyecto Angular</li>
-
-                <li>2. Instala Tailwind & Tailwind Elements</li>
-            </ul>
-            <p></p>
-        </section>
-
+<section class="h-screen">
+    <h1 class="pb-2">{{titulo}} </h1>
+    <div class="text-gray-500 text-[12px]">
+        <h3>Autor: Fabián Catalán</h3>
+        <h4 class="text-[13px]">23 de Diciembre de 2023</h4>
     </div>
-</div>
+
+    <section #introduccion class="pt-8">
+        <div class="rounded-xl border-2 border-primary-200 m-2 my-6 p-4">
+            <p><mark>Objetivo</mark>: Entender y crear un componente estilizado con Tailwind y el sistema de
+                diseño
+                Tailwind Elements en Angular.</p>
+        </div>
+        <p class="pt-4"> Al definir los estilos de los elementos de una página,
+            es frecuente ver extensas líneas horizontales con clases de Tailwind, que a menudo, se expanden
+            según
+            las necesidades de diseño
+            que se desee obtener en un elemento de página. Cuando este elemento estilizado se usa en varias
+            partes
+            del proyecto, genera
+            demasiados bytes de código repetido. Veremos cómo optimizar y limpiar el código fuente de las
+            repetitivas configuraciones visuales
+            con el uso de componentes contextuales.
+        </p>
+
+    </section>
+</section>
+
+<section #knowrebuttons class="h-screen">
+    <div class=" flex flex-col gap-2">
+        <h2 class="pb-8">Dile hola a los
+            <span
+                class="px-1 mx-2 animate animate-pulse before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-primary-700 relative inline-block">
+                <span class="relative text-white">ReButtons!</span>
+            </span>
+        </h2>
+        <div class="pt-8 flex flex-row gap-2">
+            <ux-button
+                [options]="{texto:'Primary', uppercase: true, click: null, contexto: null, color:'primary',svg:null}"></ux-button>
+            <ux-button
+                [options]="{texto:'secondary', uppercase: true, click: null, contexto: null, color:'secondary',svg:null}"></ux-button>
+            <ux-button
+                [options]="{texto:'tertiary', uppercase: true, click: null, contexto: null, color:'tertiary',svg:null}"></ux-button>
+        </div>
+        <div class="flex flex-row gap-2">
+            <ux-button
+                [options]="{texto:'primary', uppercase: true, click: null, contexto: null, color:'primary outlined',svg:null}"></ux-button>
+            <ux-button
+                [options]="{texto:'secondary', uppercase: true, click: null, contexto: null, color:'secondary outlined',svg:null}"></ux-button>
+            <ux-button
+                [options]="{texto:'tertiary', uppercase: true, click: null, contexto: null, color:'terciary outlined',svg:null}"></ux-button>
+        </div>
+    </div>
+    
+    <section #ejemplo class="py-8">
+        <img class="py-4" src="../../../../assets/blogs/reboton/reboton1.png" alt="">
+        <p class="text-gray-600 text-[16px]">Este fragmento de código estiliza los botones que están arriba.
+            Imagínate que sin esta estrategia que te presentaré hubiera repetido <mark>seis veces</mark> el código.</p>
+    
+    </section>
+</section>
+
+<section #interlude>
+    <h2>Qué, porqué, para qué y cómo hacer un
+        <span
+            class="px-1 mx-2 animate animate-pulse before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-primary-700 relative inline-block">
+            <span class="relative text-white">ReButtons!</span>
+        </span>
+    </h2>
+
+    <h3 class="py-4">Qué es?</h3>
+    <p>Un componente contextual estilizado de un botón en Angular. Lo llamo contextual porque recibe el contexto
+        del padre como parámetro para que al traspasar las funciones (que podrían manejar variables de la clase
+        padre)
+        no se pierda el contexto <b>this</b> original y evitar así usar los <b>ng-templates.</b> Lo veremos con
+        detalle más adelante. </p>
+
+    <h3 class="py-4">Porqué hacer este componente?</h3>
+    <p> Sabiendo que hay varias herramientas de diseño gratuitas y de pago que traen plantillas listas para
+        usar, la idea es
+        aprender a usar componentes reutilizables en Angular, entender la estrategia contextual, aprender a usar
+        el <b>ng-class</b> y simplificar la complejidad de usar templates (al menos, para botones simples)
+    </p>
+    <h3 class="py-4">Para qué hacer este componente?</h3>
+    <p>Para mejorar tus habilidades de frontend, para crear nuevas plantillas o sistemas de diseño en Angular,
+        mejorar la lectura (readability), reutilización de código y
+        para crear tus propios diseños controlados por tu propio componente, qué mejor!</p>
+</section>
+
+<section #howto class="py-8">
+    <h2>Cómo hacer el componente contextual desde cero?</h2>
+    <h3>Roadmap</h3>
+    <ul class="list-decimal list-outside p-4">
+        <li>Crear el proyecto Angular</li>
+        <li>Instala Tailwind & Tailwind Elements</li>
+        <li></li>
+    </ul>
+    <p></p>
+</section>
