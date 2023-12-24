@@ -1,0 +1,92 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+
+@layer base {
+  html {
+    @apply text-[#4f4f4f];
+  }
+  html.dark {
+    @apply text-neutral-50;
+    @apply bg-neutral-800;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: roboto;
+  font-weight: 400;
+  src: url(assets/fonts/Roboto-Slab/RobotoSlab-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: roboto;
+  font-weight: 500;
+  src: url(assets/fonts/Roboto-Slab/RobotoSlab-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: roboto;
+  font-weight: 600;
+  src: url(assets/fonts/Roboto-Slab/RobotoSlab-SemiBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: roboto;
+  font-weight: 700;
+  src: url(assets/fonts/Roboto-Slab/RobotoSlab-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: roboto;
+  font-weight: 900;
+  src: url(assets/fonts/Roboto-Slab/RobotoSlab-Black.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: lato;
+  font-weight: 400;
+  src: url(assets/fonts/Lato/Lato-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: lato;
+  font-weight: 300;
+  src: url(assets/fonts/Lato/Lato-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: lato;
+  font-weight: 900;
+  src: url(assets/fonts/Lato/Lato-Black.ttf) format("truetype");
+}
+@font-face {
+  font-family: lato;
+  font-weight: 700;
+  src: url(assets/fonts/Lato/Lato-Bold.ttf) format("truetype");
+}
+
+h1 {
+  font-family: 'roboto', sans-serif;
+  font-weight: 900;
+  font-size:xx-large;
+}
+h2 {
+  font-family: 'roboto', sans-serif;
+  font-weight: 700;
+  font-size:x-large;
+}
+h3 {
+  font-family: 'roboto', sans-serif;
+  font-weight: 700;
+  font-size:larger;
+}
+h4 {
+  font-family: 'lato', sans-serif;
+  font-weight: 500;
+  font-size:large;
+}
+div,p,h5 {
+  font-family: 'lato', sans-serif;
+  font-weight: 400;
+  font-size:medium;
+}
+p {
+  font-size: 18px;
+}
