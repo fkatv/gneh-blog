@@ -1,8 +1,8 @@
-<section #presentacion class="h-screen py-20">
-    <h1 class="pb-2">{{titulo}} </h1>
+<section #presentacion class="md:h-screen xs:h-auto py-12">
+    <h1 class="pb-2 md:text-[2.2em] xs:text-[1.9em]">{{titulo}} </h1>
     <div class="text-gray-500 text-[13px]">
-        <h3>Autor: Fabián Catalán</h3>
-        <h4 class="text-[14px]">23 de Diciembre de 2023</h4>
+        <h3 class="xs:text-[1.3em] ">Autor: Fabián Catalán</h3>
+        <h4 class="text-[14px] xs:text-[1em]">23 de Diciembre de 2023</h4>
     </div>
 
     <section #introduccion class="pt-8">
@@ -25,7 +25,7 @@
     </section>
 </section>
 
-<section #knowrebuttons class="h-screen">
+<section #knowrebuttons class="md:h-screen xs:h-auto py-6">
     <div class=" flex flex-col gap-2">
         <h2 class="pb-6">Dile hola a los
             <span
@@ -33,21 +33,21 @@
                 <span class="relative text-white">ReButtons!</span>
             </span>
         </h2>
-        <div class="pt-6 flex flex-row gap-2">
+        <div class="pt-6 flex gap-2">
             <ux-button
                 [options]="{texto:'Primary', uppercase: true, click: null, contexto: null, color:'primary',svg:null}"></ux-button>
             <ux-button
                 [options]="{texto:'secondary', uppercase: true, click: null, contexto: null, color:'secondary',svg:null}"></ux-button>
-            <ux-button
-                [options]="{texto:'tertiary', uppercase: true, click: null, contexto: null, color:'tertiary',svg:null}"></ux-button>
+            <!-- <ux-button
+                [options]="{texto:'tertiary', uppercase: true, click: null, contexto: null, color:'tertiary',svg:null}"></ux-button> -->
         </div>
         <div class="flex flex-row gap-2">
             <ux-button
                 [options]="{texto:'primary', uppercase: true, click: null, contexto: null, color:'primary outlined',svg:null}"></ux-button>
             <ux-button
                 [options]="{texto:'secondary', uppercase: true, click: null, contexto: null, color:'secondary outlined',svg:null}"></ux-button>
-            <ux-button
-                [options]="{texto:'tertiary', uppercase: true, click: null, contexto: null, color:'terciary outlined',svg:null}"></ux-button>
+            <!-- <ux-button
+                [options]="{texto:'tertiary', uppercase: true, click: null, contexto: null, color:'terciary outlined',svg:null}"></ux-button> -->
         </div>
     </div>
 
@@ -63,7 +63,7 @@
     </section>
 </section>
 
-<section #interlude class="h-screen">
+<section #interlude class="md:h-screen xs:h-auto py-6">
     <h2 class="pb-8">Qué, porqué, para qué y cómo hacer un
         <span
             class="px-1 mx-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-primary-700 relative inline-block">
@@ -90,7 +90,7 @@
         para crear tus propios diseños controlados por tu propio componente, qué mejor!</p>
 </section>
 
-<section #howto class="h-screen">
+<section #howto class="md:h-screen xs:h-auto py-6">
     <h2>Cómo hacer el componente contextual desde cero?</h2>
     <h3>Roadmap</h3>
     <ul class="list-decimal list-outside p-4">
