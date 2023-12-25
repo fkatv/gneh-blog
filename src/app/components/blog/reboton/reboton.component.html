@@ -34,7 +34,7 @@
         <p>Tailwind cumple su labor de ayudar al diseño y convertir los elementos HTML en candidatos a componentes
             según donde sea usado, preferentemente en frameworks de páginas web basados en javascript como Angular, React, Vue, etc.
         </p>
-        <img class="py-[10%] w-fit h-auto" src="../../../../assets/blogs/reboton/tw-compare.svg" alt="compare Tailwind">
+        <img class="py-[10%] w-fit h-auto rounded-xl" src="../../../../assets/blogs/reboton/tw-compare.svg" alt="compare Tailwind">
         <p class="py-[6%]">Imagínate ahora, un componente que no solo luzca bien, sino que también, interaccione con el mouse
             y que además, sea afectado por eventos de otros componentes considerando si el usuario cometió un error en algún área
             o se afecta por los datos que recibe de alguna petición HTTP, entre otros eventos, consecuentemente, crece la cantidad de 
@@ -44,7 +44,7 @@
             así como se ve en la siguiente imágen comparativa.
         </p>
 
-        <img class="py-[10%] w-fit h-auto" src="../../../../assets/blogs/reboton/tw2.svg" alt="tw compare">
+        <img class="rounded-xl py-[10%] w-fit h-auto" src="../../../../assets/blogs/reboton/tw2.svg" alt="tw compare">
 
         <h3 class="">Y si uso una clase global en vez de Tailwind CSS?</h3>
         <p class="py-[6%]"> Es posible, sin embargo, para llegar a ese nivel de abstracción se debe tener profundamente
@@ -55,7 +55,7 @@
             A continuación, te hago spoiler de cómo sería un <mark>componente reutilizable</mark>.
         </p>
         <div class="flex justify-center">
-            <img class="py-[10%] w-fit h-auto" src="../../../../assets/blogs/reboton/tw3.svg" alt="tw component propuesta">
+            <img class=" rounded-xl py-[10%] w-fit h-auto" src="../../../../assets/blogs/reboton/tw3.svg" alt="tw component propuesta">
         </div>
         <blockquote class="bg-yellow-100 py-4 my-6 px-2 text-2xl italic text-center text-slate-900">
             <p class="mb-0 font-roboto">Mientras se diseña, la visual debe ser altamente moldeable, escalable y prototipable, por lo que emplear componentes es una vía al desarrollo contínuo e iterativo de elementos</p>
@@ -89,14 +89,14 @@
         </div>
 
         <section #ejemplo class="">
-            <img class="py-4 w-fit h-auto" src="../../../../assets/blogs/reboton/reboton1.png" alt="reboton1">
+            <img class=" rounded-xl my-4 w-fit h-auto" src="../../../../assets/blogs/reboton/reboton1.png" alt="reboton1">
             <p class="text-gray-600 text-[16px]">Este fragmento de código estiliza los botones que están arriba.
                 Imagínate que sin esta estrategia que te presentaré hubiese repetido <mark>cuatro veces</mark> el código.
             </p>
 
             <p class="py-[6%]"> Te adelanto!, la forma de llamar al componente del primer botón azulado es como sigue:</p>
             <div class="flex justify-center">
-                <img class="w-fit h-auto" src="../../../../assets/blogs/reboton/codebtnprimary.png" alt="adelanto">
+                <img class="rounded-xl w-7/12 h-auto" src="../../../../assets/blogs/reboton/codebtnprimary.png" alt="adelanto">
             </div>
         </section>
     </section>
@@ -137,7 +137,7 @@
     <section #howto class=" py-12">
         <h2 class="py-6">Cómo hacer el componente contextual desde cero?</h2>
         <h3 class="py-6">Roadmap</h3>
-        <ul class="list-decimal list-outside py-4 px-12 text-[1.3em]">
+        <ul class="list-decimal list-outside py-4 px-12 xs:text-[1.2em] lg:text-[1.3em]">
             <li>Crea tu proyecto Angular</li>
             <li>Instala y configura Tailwind & Tailwind Elements</li>
             <li>Crea e integra un módulo de Angular</li>
@@ -147,5 +147,54 @@
             <li>Agrégale íconos, imágenes al componente (opcional)</li>
         </ul>
         <p></p>
+    </section>
+
+    <h2>Manos a la obra!</h2>
+    <section  #install class="py-12">
+        <h3>1. Crea tu proyecto Angular</h3>
+        <div class="w-full rounded-[8px] bg-slate-600 text-slate-100 px-4 py-2 my-4">
+            <div>npm install -g @angular/cli</div>
+        </div>
+        <div class="w-full rounded-[8px] bg-slate-600 text-slate-100 px-4 py-2 my-4">
+            <div>ng new my_project && cd my_project</div>
+        </div>
+        <h3 class="py-4">2. Instala y configura Tailwind & Tailwind Elements</h3>
+        <p>Basado en  <a href="https://tw-elements.com/docs/standard/integrations/angular-integration/" target="_blank">el sitio oficial de TW Elements, recomienda:</a></p>
+        <p class="py-4">Node LTS (18.x.x or higher recommended)<br>
+            Angular (14.x.x or higher recommended)<br>
+            Code editor. We recommend VSCode<br></p>
+            <a href="https://tw-elements.com/docs/standard/integrations/angular-integration/" target="_blank">Seguir instrucciones acá.</a>
+
+    </section>
+
+    <section class="py-12">
+        <h3 class="py-4">3. Crea e integra un módulo de Angular</h3>
+        <p>Construyamos un módulo visual llamado 'ux', que contendrá todos los componentes que querramos construir y reusar.
+            Podrías pensar que éste módulo es tu propio sistema de diseño!. Lo generaremos tipeando lo siguiente:</p>
+        <div class="w-full rounded-[8px] bg-slate-600 text-slate-100 px-4 py-2 my-4">
+            <div>ng g m ux</div>
+        </div>
+        <p class="py-4">Ahora integraremos este nuevo módulo al manejador de módulos de Angular del proyecto: <b>app.module.ts</b>. Si te fijas 
+        en la imágen siguiente, dentro del NgModule, se importa nuestro módulo UxModule, con esto, podemos emplear todos sus componentes dentro de cualquier
+        lugar del proyecto.</p>
+        <img src="../../../../assets/blogs/reboton/uxmodule.png" class="my-4 w-full h-auto rounded-xl" alt="uxmodule">
+    </section>
+
+    <section class="py-12">
+        <h3 class="py-4">4. Crea el componente (ReButtons) en el módulo</h3>
+        <p>Generaremos el componente dentro del módulo tipeando lo siguiente</p>
+        <div class="w-full rounded-[8px] bg-slate-600 text-slate-100 px-4 py-2 my-4">
+            <div>ng g c ux/rebutton</div>
+        </div>
+        <p>Paso a seguir es definir un parámetro de entrada que configurará el comportamiento y visualización de 
+            este botón dinámico, para ello empleamos las directivas Input de Angular.</p>
+        <img src="../../../../assets/blogs/reboton/rebuttonsdef.png" class="rounded-xl my-4 w-full " alt="rebutton def">
+        <p>Para efectos de este tutorial, solo consideraremos: el texto del botón, la función click, el contexto del 
+            componente padre, si es uppercase (letras en mayúsculas) y svg (nombre de la imágen que se empleará como ícono). 
+            <br>Se empleará una función neutra que no hará nada por defecto, si es que al componente no se le define una función.  
+        </p>
+        <div class="w-full rounded-[8px] bg-slate-600 text-slate-100 px-4 py-2 my-4">
+            <div>{{funcion}} <br> ngOnInit() {{bopen}}<br> <div class="pl-4">{{f2}}</div>{{bclose}} </div> 
+        </div>
     </section>
 </div>
