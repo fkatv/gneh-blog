@@ -34,7 +34,9 @@
         <p>Tailwind cumple su labor de ayudar al diseño y convertir los elementos HTML en candidatos a componentes
             según donde sea usado, preferentemente en frameworks de páginas web basados en javascript como Angular, React, Vue, etc.
         </p>
-        <img class="py-[10%] w-fit h-auto rounded-xl" src="../../../../assets/blogs/reboton/tw-compare.svg" alt="compare Tailwind">
+        <div class="flex justify-center">
+            <img class="py-[10%] w-fit h-auto rounded-xl" src="../../../../assets/blogs/reboton/tw-compare.svg" alt="compare Tailwind">
+        </div>
         <p class="py-[6%]">Imagínate ahora, un componente que no solo luzca bien, sino que también, interaccione con el mouse
             y que además, sea afectado por eventos de otros componentes considerando si el usuario cometió un error en algún área
             o se afecta por los datos que recibe de alguna petición HTTP, entre otros eventos, consecuentemente, crece la cantidad de 
@@ -44,7 +46,9 @@
             así como se ve en la siguiente imágen comparativa.
         </p>
 
-        <img class="rounded-xl py-[10%] w-fit h-auto" src="../../../../assets/blogs/reboton/tw2.svg" alt="tw compare">
+        <div class="flex justify-center">
+            <img class="rounded-xl py-[10%] w-fit h-auto" src="../../../../assets/blogs/reboton/tw2.svg" alt="tw compare"> 
+        </div>
 
         <h3 class="">Y si uso una clase global en vez de Tailwind CSS?</h3>
         <p class="py-[6%]"> Es posible, sin embargo, para llegar a ese nivel de abstracción se debe tener profundamente
@@ -151,14 +155,14 @@
 
     <h2>Manos a la obra!</h2>
     <section  #install class="py-12">
-        <h3>1. Crea tu proyecto Angular</h3>
-        <div class="w-full rounded-[8px] bg-slate-600 text-slate-100 px-4 py-2 my-4">
+        <h3>1/7 Crea tu proyecto Angular</h3>
+        <div class="w-full rounded-[8px] bg-slate-700 text-slate-100 px-4 py-2 my-4">
             <div>npm install -g @angular/cli</div>
         </div>
-        <div class="w-full rounded-[8px] bg-slate-600 text-slate-100 px-4 py-2 my-4">
+        <div class="w-full rounded-[8px] bg-slate-700 text-slate-100 px-4 py-2 my-4">
             <div>ng new my_project && cd my_project</div>
         </div>
-        <h3 class="py-4">2. Instala y configura Tailwind & Tailwind Elements</h3>
+        <h3 class="py-4">2/7 Instala y configura Tailwind & Tailwind Elements</h3>
         <p>Basado en  <a href="https://tw-elements.com/docs/standard/integrations/angular-integration/" target="_blank">el sitio oficial de TW Elements, recomienda:</a></p>
         <p class="py-4">Node LTS (18.x.x or higher recommended)<br>
             Angular (14.x.x or higher recommended)<br>
@@ -168,11 +172,16 @@
     </section>
 
     <section class="py-12">
-        <h3 class="py-4">3. Crea e integra un módulo de Angular</h3>
+        <h3 class="py-4">3/7 Crea e integra un módulo de Angular</h3>
         <p>Construyamos un módulo visual llamado 'ux', que contendrá todos los componentes que querramos construir y reusar.
             Podrías pensar que éste módulo es tu propio sistema de diseño!. Lo generaremos tipeando lo siguiente:</p>
-        <div class="w-full rounded-[8px] bg-slate-600 text-slate-100 px-4 py-2 my-4">
+        <div class="w-full rounded-[8px] bg-slate-700 text-slate-100 px-4 py-2 my-4">
             <div>ng g m ux</div>
+        </div>
+        <p>Paso siguiente es exportar tu componente ReButton, tal como aparece codificado de las lineas 11 a la 13 en  la siguiente imágen.</p>
+
+        <div class="flex justify-center">
+            <img src="../../../../assets/blogs/reboton/export_component.png" class="rounded-xl my-10" alt="exportar">
         </div>
         <p class="py-4">Ahora integraremos este nuevo módulo al manejador de módulos de Angular del proyecto: <b>app.module.ts</b>. Si te fijas 
         en la imágen siguiente, dentro del NgModule, se importa nuestro módulo UxModule, con esto, podemos emplear todos sus componentes dentro de cualquier
@@ -181,20 +190,97 @@
     </section>
 
     <section class="py-12">
-        <h3 class="py-4">4. Crea el componente (ReButtons) en el módulo</h3>
+        <h3 class="py-4">4/7 Crea el componente (ReButtons) en el módulo</h3>
         <p>Generaremos el componente dentro del módulo tipeando lo siguiente</p>
-        <div class="w-full rounded-[8px] bg-slate-600 text-slate-100 px-4 py-2 my-4">
+        <div class="w-full rounded-[8px] bg-slate-700 text-slate-100 px-4 py-2 my-4">
             <div>ng g c ux/rebutton</div>
         </div>
         <p>Paso a seguir es definir un parámetro de entrada que configurará el comportamiento y visualización de 
             este botón dinámico, para ello empleamos las directivas Input de Angular.</p>
-        <img src="../../../../assets/blogs/reboton/rebuttonsdef.png" class="rounded-xl my-4 w-full " alt="rebutton def">
+        <div class="flex justify-center">
+            <img src="../../../../assets/blogs/reboton/rebuttonsdef.png" class="rounded-xl my-[10%] w-7/12" alt="rebutton def">
+        </div>
         <p>Para efectos de este tutorial, solo consideraremos: el texto del botón, la función click, el contexto del 
-            componente padre, si es uppercase (letras en mayúsculas) y svg (nombre de la imágen que se empleará como ícono). 
+            componente padre, el color (primary, secondary, primary outlined, secondary outlined) si es uppercase (letras en mayúsculas) y svg (nombre de la imágen que se empleará como ícono). 
             <br>Se empleará una función neutra que no hará nada por defecto, si es que al componente no se le define una función.  
+            Mas detalles en el paso 6.
         </p>
-        <div class="w-full rounded-[8px] bg-slate-600 text-slate-100 px-4 py-2 my-4">
-            <div>{{funcion}} <br> ngOnInit() {{bopen}}<br> <div class="pl-4">{{f2}}</div>{{bclose}} </div> 
+        <div class="w-full rounded-[8px] bg-slate-700 text-slate-100 px-4 py-2 my-4">
+            <div>{{funcion}} <br><br> ngOnInit() {{bopen}}<br> <div class="pl-4">{{f2}}</div>{{bclose}} </div> 
+        </div>
+
+        <p>Definimos también el color del botón según los parámetros definidos, definí cuatro funciones para reconocer cual color debe pintar.</p>
+        <div class="flex justify-center">
+            <img src="../../../../assets/blogs/reboton/funciones.png" class="rounded-xl my-[5%]" alt="colores funcion">
+        </div>
+
+        <p>Pasemos a definir la página web. Te ayudaré a entender por líneas de código.</p>
+
+        <img src="../../../../assets/blogs/reboton/codehtml.png" class="w-full rounded-xl my-[5%]" alt="code_html">
+
+        <br><b>Linea 3</b>: Sólo dibuja el botón mientras hayan parámetros. 
+        <br><b>Linea 4-6</b>: Inicializaciones de TW Elements
+        <br><b>Línea 7</b>: Se define la función y su contexto padre. 
+        <br><b>Línea 8-17</b>: ngClass: clases dinámicas y reactivas!. Se colorea el botón según el tipo de color dado
+        <br><b>Línea 19-25</b>: clase del ReButton. Define la estética base y efectos de mouse por defecto.
+        <br><b>Línea 26-27</b>: Se define la imagen que aparecerá a la izquierda del texto. 
+        <br><b>Línea 28</b>: El texto del componente botón.
+
+        <p class="py-4">Y ya tenemos el componente ReButtons definido! podemos ya empezar a usarlo</p>
+    </section>
+
+    <section class="py-[5%]">
+        <h3 class="py-4">5/7 Invoca el componente (ReButtons) en tu HTML</h3>
+        <p>Es hora de llamar a nuestra creación. Puedes crear otro componente FUERA del módulo e invocar a ReButtons, pues 
+            tienes el módulo insertado en el manejador de módulos. Para tu tranquilidad, el código fuente está al final de esta publicación.</p>
+        <div class="flex justify-center">
+            <img class="rounded-xl w-4/12 my-10 h-auto" src="../../../../assets/blogs/reboton/codebtnprimary.png" alt="adelanto">
         </div>
     </section>
+
+    <section class="pb-12">
+        <h3 class="py-8">6/7 Agrégale una función y un contexto</h3>
+        <p>Pongámonos en práctica y desarrollemos una función del botón que cambie el texto de un título cualquiera.
+            Esta función solo cambiará un atributo de la clase principal (llamémosla title) y debe cambiar a un saludo que definirás.
+        </p>
+
+        <p>Si nos detenemos en la función <mark>cambiaTexto</mark>, esta recibe como parámetro un contexto de tipo any, pues debe 
+            aceptar cualquier componente padre, incluso el valor nulo. Cuando se desarrolla esta función, hay que tener en consideración
+            que toda variable o función que sea llamada debe referenciarse al contexto argumental de la función, es decir, 
+            si quieres modificar una variable o llamar una función de la clase, debes cambiar cada THIS por el contexto dado en la función.
+        </p>
+
+        <div class="py-6 flex justify-center">
+            <img src="../../../../assets/blogs/reboton/app1.png" class="rounded-xl " alt="app1">
+        </div>
+
+        <p>Si te fijas bien en la siguiente imágen, se le define la función click sin los paréntesis. Por otro lado, el contexto del componente padre es this, por defecto.</p>
+
+        <div class="py-6 flex justify-center">
+            <img src="../../../../assets/blogs/reboton/html1.png" class="rounded-xl " alt="app1">
+        </div>
+
+        <blockquote class="bg-yellow-100 py-4 my-6 px-2 text-2xl italic text-center text-slate-900">
+            <p class="mb-0 font-roboto">Si quieres modificar una variable o llamar una función de la clase, debes cambiar cada THIS por el contexto dado en la función</p>
+        </blockquote>
+
+        <p class="my-2">Al igual que en Java, se emplea la palabra reservada <mark>this</mark> para referirse a la instancia actual (objeto contexto) de dicha clase que está ejecutándose</p>
+        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/this">Leer más</a>
+
+        <h3 class="pt-8">Resultados</h3>
+        <div class="py-6 flex justify-center">
+            <img src="../../../../assets/blogs/reboton/saluda1.png" class="rounded-xl " alt="app1">
+        </div>
+        <p>Después de clickear</p>
+        <div class="py-6 flex justify-center">
+            <img src="../../../../assets/blogs/reboton/saluda2.png" class="rounded-xl " alt="app1">
+        </div>
+    </section>
+
+    <h3 class="py-6">Código del ReButtons</h3>
+    Revisa el código en mi github <a href="https://github.com/fkatv/gneh-rebutton"> Gneh-Rebutton</a>
+
+    <div class="flex justify-center pt-24">
+        <h2>Gracias por visitar mis publicaciones</h2>
+    </div>
 </div>

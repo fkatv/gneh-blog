@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class RebotonComponent {
   titulo = "Estrategias para crear componentes contextuales de Angular estilizados con Tailwind para mejorar la lectura y reutilización de código"
-  funcion = "function useless ( ) => { }";
+  funcion = "useless ( some: any ) { }";
   bopen ="{"
   bclose ="}"
-  f2 = "   if (!options.click) options.click = this.useless();"
+  f2 = "   if (!options.click) options.click = this.useless;"
   cambiarTitulo(contexto: any) {
     contexto.titulo = "hola!";
   }
