@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./reboton.component.css']
 })
 export class RebotonComponent {
-  titulo = "Estrategias para crear componentes contextuales de Angular estilizados con Tailwind para mejorar la lectura y reutilización de código"
+  //titulo = "Estrategias para crear componentes contextuales de Angular estilizados con Tailwind para mejorar la lectura y reutilización de código"
+  titulo ="Estrategias para crear componentes contextuales de Angular estilizados con Tailwind "
   funcion = "useless ( some: any ) { }";
   bopen ="{"
   bclose ="}"

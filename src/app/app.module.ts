@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { UxModule } from './ux/ux.module';
 import { MainComponent } from './components/main/main.component';
 import { RebotonComponent } from './components/blog/reboton/reboton.component';
+import { LandingComponent } from './blog/landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    RebotonComponent
+    RebotonComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

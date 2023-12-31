@@ -12,18 +12,8 @@
                     diseño
                     Tailwind Elements en Angular.</p>
             </div>
-            <p class="pt-4"> Al definir los estilos de los elementos de una página,
-                es frecuente ver extensas líneas horizontales con clases de Tailwind, que a menudo, se expanden
-                según las necesidades de diseño
-                que se desee obtener sobre un elemento de página. Al trabajar sin Tailwind CSS, el estilizado se realiza
-                configurando una hoja de estilos CSS cuyas configuraciones se conectan con la página web, o bien,
-                se emplea la configuración explícita de estilos sobre el mismo elemento HTML, esto implica
-                la dependencia de la hoja de estilos al componente o emplear estilos
-                inyectados en alguna sección del código.
-                Sumado a lo anterior, cuando se necesita reutilizar elementos estilizados en el proyecto,
-                 aumenta necesariamente las líneas de código repetido
-                si no se maneja adecuadamente. Veremos en esta entrada, cómo optimizar y limpiar el código fuente
-                de las repetitivas configuraciones visuales con el uso de componentes contextuales.
+            <p class="pt-4"> 
+                Actualmente, el uso de Tailwind CSS como herramienta de configuración visual de elementos HTML se ha hecho popular en el desarrollo web. Su estructura da pie para crear componentes según el framework donde se use, pues, brinda un soporte a los desarrolladores para crear diseños rápidos, altamente escalables y reproducibles. El inconveniente de usar estas definiciones de diseño es la duplicación de código, originado cuando se necesita repetir o reutilizar los elementos estilizados sin emplear estrategias de reutilización o definiciones de estilos globales. En esta entrada, veremos una estrategia de creación de componentes contextuales en Angular para prevenir la duplicación de código.
             </p>
         </section>
     </section>
@@ -37,14 +27,9 @@
         <div class="flex justify-center">
             <img class="py-[10%] w-fit h-auto rounded-xl" src="../../../../assets/blogs/reboton/tw-compare.svg" alt="compare Tailwind">
         </div>
-        <p class="py-[6%]">Imagínate ahora, un componente que no solo luzca bien, sino que también, interaccione con el mouse
-            y que además, sea afectado por eventos de otros componentes considerando si el usuario cometió un error en algún área
-            o se afecta por los datos que recibe de alguna petición HTTP, entre otros eventos, consecuentemente, crece la cantidad de 
-            clases que afectan al diseño dinámico de este elemento. A todo lo anterior, agrégale que este elemento lo usarás en 
-            varias secciones y páginas del proyecto... tendrás que copiar todo el código afectando en la escalabilidad y calidad de desarrollo. 
-            Una estrategia para abordar esta situación es usar componentes, 
-            así como se ve en la siguiente imágen comparativa.
-        </p>
+        <p class="py-[6%]"> Ahora, visualiza un componente que no solo tiene un aspecto atractivo, sino que también interactúa con el mouse y responde a eventos de otros componentes, ya sea en caso de errores en alguna área o al ser afectado por datos provenientes de peticiones HTTP, entre otros eventos. Como consecuencia, la cantidad de clases que influyen en el diseño dinámico de este elemento crece significativamente. Añádele a esto el hecho de que este elemento se utilizará en varias secciones y páginas del proyecto. La duplicación de código resultante afectaría la escalabilidad y la calidad del desarrollo.
+
+            Una estrategia para abordar esta compleja situación es la utilización de componentes, como se ilustra en la siguiente comparación visual.
 
         <div class="flex justify-center">
             <img class="rounded-xl py-[10%] w-fit h-auto" src="../../../../assets/blogs/reboton/tw2.svg" alt="tw compare"> 
@@ -52,17 +37,17 @@
 
         <h3 class="">Y si uso una clase global en vez de Tailwind CSS?</h3>
         <p class="py-[6%]"> Es posible, sin embargo, para llegar a ese nivel de abstracción se debe tener profundamente
-            dominado el diseño y sus interacciones. En etapas de diseño, los elementos están en constante modificación
-            según la necesidad de diseño e interacción que se desee, es por eso que, usar clases globales, podría ser viable en etapas más maduras
-            del proyecto. Mientras se diseña, la visual debe ser altamente moldeable, escalable y prototipable, por lo que emplear 
-            <b>componentes</b> , es una vía al desarrollo contínuo e iterativo de elementos que tienden a usarse en varias secciones del proyecto de software.
-            A continuación, te hago spoiler de cómo sería un <mark>componente reutilizable</mark>.
+            dominado el diseño y sus interacciones.  Durante las etapas de diseño, los elementos se encuentran en constante evolución, adaptándose a las necesidades específicas de diseño e interacción. Es por ello que el uso de clases globales podría ser más apropiado en fases más avanzadas del proyecto.
+
+            En el proceso de diseño, la visualización debe ser altamente adaptable, escalable y sujeta a prototipos. Por esta razón, la implementación de componentes se convierte en una vía hacia el desarrollo continuo e iterativo de elementos destinados a ser utilizados en diversas secciones del proyecto de software.
+            
+            A continuación, te ofrezco un adelanto de cómo sería un <mark>componente reutilizable</mark>.
         </p>
         <div class="flex justify-center">
             <img class=" rounded-xl py-[10%] w-fit h-auto" src="../../../../assets/blogs/reboton/tw3.svg" alt="tw component propuesta">
         </div>
         <blockquote class="bg-yellow-100 py-4 my-6 px-2 text-2xl italic text-center text-slate-900">
-            <p class="mb-0 font-roboto">Mientras se diseña, la visual debe ser altamente moldeable, escalable y prototipable, por lo que emplear componentes es una vía al desarrollo contínuo e iterativo de elementos</p>
+            <p class="mb-0 font-roboto">"La implementación de componentes se convierte en una vía hacia el desarrollo continuo e iterativo de elementos destinados a ser utilizados en diversas secciones del proyecto de software"</p>
         </blockquote>
     </section>
 
@@ -122,15 +107,19 @@
             detalle más adelante. </p>
 
         <h3 class="py-6">Porqué hacer este componente?</h3>
-        <p> Sabiendo que hay varias herramientas de diseño gratuitas y de pago que traen plantillas listas para
-            usar, la idea es
-            aprender a usar componentes reutilizables en Angular, entender la estrategia contextual, aprender a usar
-            el <b>ng-class</b> y simplificar la complejidad de usar templates (al menos, para botones simples)
+        <p> 
+            Con la conciencia de la disponibilidad de diversas herramientas de diseño que ofrecen plantillas listas para utilizar
+             , la idea radica en adquirir habilidades para emplear componentes
+             reutilizables en Angular. Este proceso implica comprender la estrategia contextual, familiarizarse con el uso de
+              <b>ng-class</b> y simplificar la complejidad asociada con la implementación de templates, al menos en el caso de 
+              elementos tan simples como botones.
         </p>
         <h3 class="py-6">Porqué emplear Tailwind Elements?</h3>
-        <p> Usar un sistema base de diseño mejora los tiempos de desarrollo, como también se puede utilizar maquetas prehechas,
-            gratuitas y altamente escalables. Tailwind Elements tiene mas de 500 componentes para utilizar, lo que resulta 
-            perfecto para crear componentes personalizados.
+        <p> 
+            La implementación de un sistema base de diseño no solo optimiza los tiempos de desarrollo, sino que también permite 
+            aprovechar maquetas preexistentes, las cuales son gratuitas y ofrecen una escalabilidad destacada. 
+            Con más de 500 componentes disponibles, Tailwind Elements se presenta como una elección ideal para la creación 
+            de componentes personalizados.
         </p>
         <h3 class="py-6">Para qué hacer este componente?</h3>
         <p>Para mejorar tus habilidades de frontend, para crear nuevas plantillas o sistemas de diseño en Angular,
