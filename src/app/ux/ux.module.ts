@@ -15,6 +15,7 @@ import { TEInitiatorComponent } from './teinitiator/teinitiator.component';
   ],
   exports: [
     ButtonComponent,
+    TEInitiatorComponent
   ]
 })
 export class UxModule { }

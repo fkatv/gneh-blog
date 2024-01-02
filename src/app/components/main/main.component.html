@@ -1,16 +1,19 @@
-<nav class="h-14 w-full flex justify-center rounded-b-full bg-primary-100 ">
-    <div #logo class="py-4 flex flex-col">
-        <span
-        class="before:rounded-md before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-primary-700 relative inline-block">
-        <h2 class="relative text-white text-[36px]">GNEH!</h2>
-    </span>
-    <h5 class="text-primary-900 py-1 text-[1em]">by fabo</h5>
-    </div>
-</nav>
 
-
-<div class="py-8 w-full flex justify-center main ">
-    <div class="xl:w-[52%] lg:w-[70%] md:w-[80%] xs:w-full xs:px-8 py-8 scroll-smooth">
-        <app-reboton ></app-reboton>
+<div class="h-screen fondo1" loading="lazy">
+    <nav class="h-14 w-full flex justify-center rounded-b-full bg-primary-100 ">
+        <div #logo class="py-4 flex flex-col cursor-pointer" (click)="toHome()">
+            <span
+            class="before:rounded-md before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-primary-700 relative inline-block">
+            <h2 class="relative text-white text-[36px]">GNEH!</h2>
+        </span>
+        <h5 class="text-primary-900 py-1 text-[0.9em]">by fabo</h5>
+        </div>
+    </nav>
+    
+    <div class="py-8 w-full flex justify-center main ">
+        <div class="xl:w-[52%] lg:w-[70%] md:w-[80%] xs:w-full xs:px-8 py-8 scroll-smooth content h-full rounded-3xl">
+            
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
